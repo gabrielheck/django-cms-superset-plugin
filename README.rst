@@ -31,7 +31,7 @@ Key Features
 Screenshots
 -----------
 
-![Change Dashboard Settings](https://a.imagem.app/oHncGS.png)
+https://a.imagem.app/oHncGS.png
 
 Roadmap
 -----------
