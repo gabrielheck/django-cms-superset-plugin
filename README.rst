@@ -18,8 +18,7 @@ Quick start
 
 3. Run ``python manage.py migrate django_cms_superset_plugin`` to create the django_cms_superset_plugin models.
 
-4. Start the development server and visit http://127.0.0.1:8000/admin/ to add/edit
-new dashboards to your pages. The plugin name is identified as superset.
+4. Start the development server and visit http://127.0.0.1:8000/admin/ to add/edit new dashboards to your pages. The plugin name is identified as superset.
 
 Key Features
 -----------
