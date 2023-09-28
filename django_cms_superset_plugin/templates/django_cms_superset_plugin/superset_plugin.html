@@ -1,0 +1,32 @@
+{% load sekizai_tags %}
+
+{% addtoblock "js" %}<script src="https://unpkg.com/@superset-ui/embedded-sdk"></script>{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript" class="cms-trigger-event-window-load">
+
+      supersetEmbeddedSdk.embedDashboard({
+        id: '{{ dashboard.dashboard_id  }}', 
+        supersetDomain: '{{ dashboard.superset_domain  }}',
+        mountPoint: document.getElementById('{{ dashboard.dashboard_id }}'),
+        fetchGuestToken: () =>
+          '{{ dashboard.fetchGuestToken }}',
+        dashboardUiConfig: {
+          hideTitle: {{ dashboard.hide_title|yesno:"true,false" }},
+          hideTab: {{ dashboard.hide_tab|yesno:"true,false" }},
+          hideChartControls: {{ dashboard.hide_chart_controls|yesno:"true,false" }},
+          filters: {
+              expanded: {{ dashboard.filters_expanded|yesno:"true,false" }},
+              visible: {{ dashboard.filters_visible|yesno:"true,false" }}
+          }
+        }
+      })
+
+      var dashboard_iframe = document.querySelector('div[id=\'{{ dashboard.dashboard_id }}\'] iframe')
+
+      dashboard_iframe.style.width = '{{ dashboard.width  }}'
+      dashboard_iframe.style.height = '{{ dashboard.height }}'
+    
+</script>
+{% endaddtoblock %}
+
+<div id="{{ dashboard.dashboard_id  }}"></div>

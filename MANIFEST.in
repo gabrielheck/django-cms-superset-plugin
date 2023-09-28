@@ -1,0 +1,3 @@
+include LICENSE
+include README.rst
+recursive-include django_cms_superset_plugin/templates *
