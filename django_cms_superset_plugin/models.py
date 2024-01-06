@@ -47,9 +47,9 @@ class EmbeddedDashboard(models.Model):
 
             guest_token_payload = {
                 "user": {
-                    "username": "dev_svc_django.cms",
-                    "first_name": "Django",
-                    "last_name": "CMS"
+                    "username": self.username,
+                    "first_name": "",
+                    "last_name": ""
                 },
                 "resources": [{
                     "type": "dashboard",
